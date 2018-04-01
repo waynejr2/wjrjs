@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>collection experiment</title>
+    
+    <script>
+        var stuff = new Map();
+        
+        function foo(map) {
+            console.log(map);
+        };
+        function bar(map, key, value) {
+            map.set(key, value);
+        };
+        function baz(map, key) {
+            map.delete(key);
+        };
+        function loo(map) {
+            for (var [key, value] of map) {
+                console.log(key + ' goes ' + value);
+            }
+        };
+        
+        //what if some idiot adds something with a priority that matches an existing?
+        function bampf(ar, priority, obj) {
+            var insertIndex = 0;
+            
+            for (var i = 0; i < ar.length; i++) {
+                if ( ar[i][0] > priority) {
+                    break;
+                }
+            };
+            
+            insertIndex = i;
+            ar.splice(insertIndex, 0, new Array(priority, obj));
+        };
+        
+        //what if some idiot adds something with a priority that matches an existing
+        //then we want do delete it
+        function boing(ar, priority) {            
+            for (var i = 0; i < ar.length;i++) {
+                if (ar[i][0] === priority) {
+                    ar.splice(i, 1);
+                }
+            }
+        };
+        
+        bar(stuff, 1, "dog");
+        bar(stuff, 2, "cat");
+        bar(stuff, 4, "kiwi");
+        bar(stuff, 3, "kangaroo");
+        
+        foo(stuff);
+        loo(stuff);
+        baz(stuff, 4); //bye bye kiwi
+        loo(stuff);
+        
+        var ar1 = new Array();
+        console.log(ar1);
+        ar1[0] = new Array(7, "dog");
+        console.log(ar1);
+                
+        bampf(ar1, 1, "apple");
+        bampf(ar1, 99, "zebra");  
+        bampf(ar1, 5, "cat");     
+        bampf(ar1, 10, "bat");
+        console.log(ar1.join());
+        
+        var ar2 = new Array();
+        bampf(ar2, 1, "apple");
+        bampf(ar2, 2, "banana");
+        bampf(ar2, 3, "cat");
+        bampf(ar2, 4, "dog");
+        bampf(ar2, 5, "eagle");
+        console.log(ar2.join());
+        
+        var ar3 = new Array();
+        bampf(ar3, 5, "eagle");
+        bampf(ar3, 4, "dog");
+        bampf(ar3, 3, "cat");
+        bampf(ar3, 2, "banana");
+        bampf(ar3, 1, "apple");
+        console.log(ar3.join());
+        
+        boing(ar3, 3);
+        boing(ar3, 5);
+        boing(ar3, 1);
+        console.log(ar3.join());
+        boing(ar3, 4);
+        boing(ar3, 2);
+        console.log(ar3.join()|| "great");
+        console.log("good");
+        
+        var myjson = JSON.stringify(ar2);
+        console.log(myjson);
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+</body>

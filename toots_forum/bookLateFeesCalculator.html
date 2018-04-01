@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>abstract-factory-experiment00001</title>
+    
+    <script>
+    console.logorig = console.log;
+    
+    function calculate(numberOfDays) {
+        var result;
+        
+        result = (10 * numberOfDays) + ((numberOfDays * (numberOfDays - 1)) / 2);
+        
+        return result;
+    }
+    
+    function averageDailyFine(totalFine, numberOfDays) {
+        var result = 0;
+        
+        if (numberOfDays) {
+            result = totalFine / numberOfDays;
+        }
+        
+        return result;
+    }
+    
+    for (var numberOfDays = 0; numberOfDays < 100; numberOfDays++) {
+        var totalFine = calculate(numberOfDays);
+        var avgDailyFine = averageDailyFine(totalFine, numberOfDays);
+        var output = "Day: " + numberOfDays + ", total fine: " + totalFine + ", AvgDailyFine: " + avgDailyFine;
+        console.log(output);
+        document.write(output);
+        document.write("<br>");
+    }
+   
+    console.logorig("done");
+    </script>
+    
+</head>
+<body>
+</body>
+</html>

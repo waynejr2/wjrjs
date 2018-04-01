@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>fetch from randomuser.me</title>
+    <script>
+        var url = "https://randomuser.me/api/?results=10"
+        fetch(url)
+        .then((resp) => resp.json()) 
+        .then(function(data) {console.log(data)})
+        /*.then(function(data) {
+            console.log(data)
+            // Here you get the data to modify as you please
+        })*/
+        .catch(function(error) {
+            // If there is any error you will catch them here
+        });   
+    </script>
+</head>
+<body>
+</body>
+</html>

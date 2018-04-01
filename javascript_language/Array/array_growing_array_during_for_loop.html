@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>growing array during for loop</title>
+    <script>
+        var loopArray = [ "apple", "watermelon", "banana", "pear" ];
+        var bashArray = [ "car", "airplane", "boat", "tank" ];
+        //var bashArray = [  ];
+        
+        for (var i = 0; i < loopArray.length; i++) {
+            console.log(loopArray[i]);
+            /*if ( i === 2) {
+                loopArray.push("car");
+            }*/
+            
+            if (bashArray.length > 0 ) {
+                loopArray.push(bashArray.shift());
+            }
+            
+        }
+    
+    </script>
+</head>
+<body>
+</body>
+</html>

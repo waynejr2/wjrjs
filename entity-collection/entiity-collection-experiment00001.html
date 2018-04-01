@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>entiity-collection-experiment00001</title>
+    
+    <script>
+
+    function AI() {
+        this.classname = "AI";
+        this.r = [];
+
+        console.log("***creating new " + this.classname);
+    
+        this.add = function(obj) {
+            console.log(this.classname + " got an object " + obj.name);
+            this.r.push(obj);
+        };
+        
+        this.printr = function(obj) {
+            for(var i = 0; i< this.r.length; i++) {
+               //console.log("r is: " + this.r[i]);
+               (this.r[i]).render();
+            };
+        };
+
+    }; 
+    
+    function Render() {
+        this.classname = "Render";
+        this.r = [];
+
+        console.log("***creating new " + this.classname);
+    
+        this.add = function(obj) {
+            console.log(this.classname + " got an object " + obj.name);
+            this.r.push(obj);
+        };
+        
+        this.printr = function(obj) {
+            for(var i = 0; i< this.r.length; i++) {
+               //console.log("r is: " + this.r[i]);
+               (this.r[i]).render();
+            };
+        };
+
+    }; 
+    
+    function Update() {
+        this.classname = "Update";
+        this.r = [];
+
+        console.log("***creating new " + this.classname);
+    
+        this.add = function(obj) {
+            console.log(this.classname + " got an object " + obj.name);
+            this.r.push(obj);
+        };
+        
+        this.printr = function(obj) {
+            for(var i = 0; i< this.r.length; i++) {
+               //console.log("r is: " + this.r[i]);
+               (this.r[i]).update();
+            };
+        };
+
+    }; 
+              
+              
+    function Mob(name) {
+        this.name = name;
+        console.log("***creating new Mob");
+        
+        this.render = function() {
+            console.log("rendering " + this.name);
+        };
+        
+        this.update = function() {
+            console.log("updating " + this.name);
+        };
+    };
+    
+    
+    var aie = new AI();
+    var ren = new Render();
+    var upd = new Update();
+    var b = new Mob("bob");
+    b.render();
+    ren.printr();
+    ren.add(b);
+    
+    //var ar = new Array("aaa", "bbb", "ccc", "ddd", "eee");
+    var ar = new Array("aaa", "bbb");
+    console.log(ar.length);
+    
+    for(var i = 0; i < ar.length; i++) {
+        var newMob = new Mob(ar[i]);
+        ren.add(newMob);
+        upd.add(newMob);
+        //ren.add(new Mob(ar[i]));
+    }
+    
+    ren.printr();
+    upd.printr();
+    
+    
+    </script>
+</head>
+<body>
+</body>

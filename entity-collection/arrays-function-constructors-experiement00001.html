@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arrays-function-constructors-experiment00001</title>
+    
+    <script>
+
+    function Dragon(name) {
+        var name = name ||"Dragon";
+        var type = "Dragon";
+        var x = 100;
+        var y = 100;
+        
+        print("***creating new " + type + " ");
+        
+        this.render = function() {
+            print("rendering ");
+        };
+        
+        this.update = function() {
+            print("updating ");
+        };
+        
+        function print(msg) {
+            var pmsg = msg || "";
+            console.log(pmsg + name + " x: " + x + " y: " + y);
+        };
+    };
+ 
+    function Gnoll(name) {
+        var name = name || "Gnoll";
+        var type = "Gnoll";
+        var x = 100;
+        var y = 100;
+        
+        print("***creating new " + type + " ");
+        
+        this.render = function() {
+            print("rendering ");
+        };
+        
+        this.update = function() {
+            print("updating ");
+        };
+        
+        function print(msg) {
+            var pmsg = msg || "";
+            console.log(pmsg + name + " x: " + x + " y: " + y);
+        };
+    };
+    
+    function Goblin(name) {
+        var name = name;
+        var type = "Goblin";
+        var x = 100;
+        var y = 100;
+        
+        print("***creating new " + type + " ");
+        
+        this.render = function() {
+            print("rendering ");
+        };
+        
+        this.update = function() {
+            print("updating ");
+        };
+        
+        function print(msg) {
+            var pmsg = msg || "";
+            console.log(pmsg + name + " x: " + x + " y: " + y);
+        };
+    };
+    
+    function Human(name) {
+        var name = name;
+        var type = "Human";
+        var x = 100;
+        var y = 100;
+        
+        print("***creating new " + type + " ");
+        
+        this.render = function() {
+            print("rendering ");
+        };
+        
+        this.update = function() {
+            print("updating ");
+        };
+        
+        function print(msg) {
+            var pmsg = msg || "";
+            console.log(pmsg + name + " x: " + x + " y: " + y);
+        };
+    };
+    
+    function Orc(name) {
+        var name = name;
+        var type = "Orc";
+        var x = 100;
+        var y = 100;
+        
+        print("***creating new " + type + " ");
+        
+        this.render = function() {
+            print("rendering ");
+        };
+        
+        this.update = function() {
+            print("updating ");
+        };
+        
+        function print(msg) {
+            var pmsg = msg || "";
+            console.log(pmsg + name + " x: " + x + " y: " + y);
+        };
+    };
+    
+    function Skeleton(name) {
+        var name = name;
+        var type = "Skeleton";
+        var x = 100;
+        var y = 100;
+        
+        print("***creating new " + type + " ");
+        
+        this.render = function() {
+            print("rendering ");
+        };
+        
+        this.update = function() {
+            print("updating ");
+        };
+        
+        function print(msg) {
+            var pmsg = msg || "";
+            console.log(pmsg + name + " x: " + x + " y: " + y);
+        };
+    };
+    
+    function fingle(i) {
+        return fa[i];
+    };
+     
+    function mobMaker(i) {
+        return new fa[i]();
+    };
+    
+    function mingle() {
+            
+        for (var i = 0; i <1; i++) {
+            for (m = 0 ; m < fa.length; m++) {
+                horde[(i * 6) + m] = new fa[m](10000 + m*1000 + i);
+            }
+        }
+            
+        for (var i = 0; i < 5; i++) {
+            for (var m = 0; m < horde.length; m++) {
+                horde[m].update();
+                horde[m].render();
+            }
+        }
+        
+    };
+ 
+        
+    function bampf(ar, priority, obj) {
+        var insertIndex = 0;
+            
+        for (var i = 0; i < ar.length; i++) {
+            if ( ar[i][0] > priority) {
+                break;
+            }
+        };
+            
+        insertIndex = i;
+        ar.splice(insertIndex, 0, new Array(priority, obj));
+    };
+    
+    function bongo() {
+        var testFunction = [];
+        var tempMob;
+        
+        for (var i = 0; i < 2; i++) {
+            for (var m = 0; m < fa.length; m++) {
+                tempMob = mobMaker(m);
+                testFunction[i*fa.length + m] = tempMob.render;
+            } 
+            
+            for (var i = 0; i < testFunction.length; i++) {
+                testFunction[i]();
+            }
+        }
+    };
+    
+    
+    console.logorig = console.log;
+    //console.log = function() {};
+  
+    var fa = [];
+    fa[0] = Dragon;
+    fa[1] = Gnoll;
+    fa[2] = Goblin;
+    fa[3] = Human;
+    fa[4] = Orc;
+    fa[5] = Skeleton;
+    
+    var m = new fa[0]("bob");
+    console.log(m);
+    m.render();
+    m.update();
+    
+    var horde = [];
+
+    //mingle();
+    
+    var z = new (fingle(1))();
+    console.log(z);
+    
+    var w = mobMaker(0);
+    console.log(w);
+    
+    
+    bongo();
+    
+    
+    console.logorig("done");
+    
+    
+    
+    
+        
+    </script>
+    
+</head>
+<body>
+</body>
+<html>>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>abstract-factory-experiment00001</title>
+    
+    <script>
+    console.logorig = console.log;
+    
+    function Mob(name) {
+        this.name = name || "Mob";
+        console.log("creating mob " + this.name);
+    };
+    
+    function mobFactory(name) {
+        this.create = function(name) {
+        return new Mob(name);
+        };
+    };
+    
+    
+    
+    var a = new mobFactory();
+    console.log(a);
+    a.create("bob");
+    
+    
+    console.logorig("done");
+    </script>
+    
+</head>
+<body>
+</body>
+<html>>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>ydkjs - scopes and closures - hoisting page 44</title>
+    <script>
+        //foo();
+        var foo = function bar() {
+            var a;
+            console.log(7);
+            a = 2;
+            console.log(bar);
+        console.log(foo === bar);
+        }
+        
+        foo();
+        //console.log(foo);
+        //console.log(bar);
+        foo;
+    </script>
+</head>
+<body>
+</body>
+</html>

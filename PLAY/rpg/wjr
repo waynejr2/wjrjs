@@ -1,0 +1,7 @@
+
+npm install browserify --save
+npm install gulp --save
+npm install gulp-imagemin --save
+npm install gulp-open --save
+npm install vinyl-source-stream --save
+

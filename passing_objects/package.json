@@ -1,0 +1,11 @@
+{
+  "name": "passing_objects",
+  "version": "1.0.0",
+  "description": "Passing js objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wayne Rasmussen",
+  "license": "MIT"
+}

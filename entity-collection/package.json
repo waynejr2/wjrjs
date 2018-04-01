@@ -1,0 +1,12 @@
+{
+  "name": "entity-collection",
+  "version": "1.0.0",
+  "description": "entity framework experiment",
+  "main": "main.js",
+  "scripts": {    
+    "test": "jasmine",
+    "testw": "nodemon --exec \"npm test\""
+  },
+  "author": "Wayne J Rasmussen",
+  "license": "ISC"
+}

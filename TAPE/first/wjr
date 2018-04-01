@@ -1,0 +1,9 @@
+
+
+npm i tape -D
+
+npm i tap-spec tap-simple -D
+
+
+node main.js | ./node_modules/.bin/tap-spec
+node main.js | ./node_modules/.bin/tap-simple
